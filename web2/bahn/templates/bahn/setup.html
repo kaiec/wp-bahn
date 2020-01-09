@@ -1,0 +1,35 @@
+{% extends 'bahn/base.html' %}
+{% block content %}
+
+<table class='table'>
+{% for verbindung in verbindungen %}
+<tr>
+    <td>{{ verbindung.name }}</td>
+    <td>
+    {% for segment in verbindung.segment_set.all|dictsort:"position"  %}
+        {{ segment.start }} - {{ segment.ziel }}
+    {% endfor %}
+    </td>
+<tr>
+{% endfor %}
+</table>
+
+
+  <form action="{% url 'setup' %}" method='post'>
+        {% csrf_token %}
+        <div class='verbindungsformular'>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name"><br>
+        </div>
+        <div class='segmentformular'>
+            <label for="start1">Start:</label>
+            <input type="text" name="start1" id="start1">
+            <label for="ziel1">Ziel:</label>
+            <input type="text" name="ziel1" id="ziel1"><br>
+        </div>
+        <a href='javascript:addSegment()'>Neues Segment anlegen</a>
+        <input type="submit" value="Neue Verbindung anlegen">
+  </form>
+
+ 
+{% endblock content %}

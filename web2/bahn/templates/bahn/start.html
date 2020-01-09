@@ -1,0 +1,16 @@
+{% extends 'bahn/base.html' %}
+{% block content %}
+<table class='table'>
+{% for verbindung in verbindungen %}
+<tr>
+    <td>{{ verbindung.name }}</td>
+    <td>
+    <a href=" {% url 'fahrten' verbindung.id 'hin' %} ">Hinweg</a>
+    <a href=" {% url 'fahrten' verbindung.id 'zurueck' %} ">Rückweg</a>
+    </td>
+<tr>
+{% endfor %}
+</table>
+
+
+{% endblock content %}

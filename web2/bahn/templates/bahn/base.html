@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bahn</title>
+    <link rel="stylesheet" href="{% static 'bahn/css/bootstrap.min.css' %} ">
+</head>
+<body>
+
+{% block content %}
+{% endblock content %}
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{% static 'bahn/js/jquery-1.12.4.min.js' %}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'bahn/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'bahn/js/bahn.js' %}"></script>
+</body>
+</html>

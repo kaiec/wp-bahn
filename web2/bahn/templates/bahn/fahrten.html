@@ -1,0 +1,12 @@
+<ul>
+    {% for segment in segmente  %}
+        <li>
+            {{ segment.start }} - {{ segment.ziel }}
+            <ol>
+                {% for fahrt in segment.fahrten  %}
+                    <li>{{ fahrt.abfahrt}}</li>
+                {% endfor %}
+            </ol>
+        </li>
+    {% endfor %}
+</ul>
